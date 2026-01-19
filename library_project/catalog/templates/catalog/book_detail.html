@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>{{ book.title }}</h1>
+    <p><strong>Автор:</strong> {{ book.author }}</p>
+    <p><strong>Год:</strong> {{ book.year }}</p>
+    <p><strong>Жанр:</strong> {{ book.genre }}</p>
+    <p><strong>Издательство:</strong> {{ book.publisher }}</p>
+    <p><strong>Доступна:</strong> {% if book.is_available %} Да {% else %} Нет {% endif %}</p>
+    <hr>
+    <a href="/books/">Назад к списку</a>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>Наші Читачі</h1>
+    <a href="/readers/add/">[ + Додати читача ]</a>
+    <hr>
+    <ul>
+        {% for reader in readers %}
+        <li>
+            <a href="/readers/{{ reader.id }}/"><b>{{ reader.first_name }} {{ reader.last_name }}</b></a>
+            — <a href="/readers/{{ reader.id }}/edit/">Редагувати</a>
+            | <a href="/readers/{{ reader.id }}/delete/" style="color:red;">Видалити</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/">На головну</a>
+</body>
+
+</html>

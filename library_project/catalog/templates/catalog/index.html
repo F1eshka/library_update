@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>Библиотека</h1>
+
+    <div style="background: #eee; padding: 10px;">
+        {% if user.is_authenticated %}
+        <p>Привет, {{ user.username }}! |
+        <form action="/accounts/logout/" method="post" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit">Выйти</button>
+        </form>
+        </p>
+        {% else %}
+        <a href="/accounts/login/">Войти</a>
+        {% endif %}
+    </div>
+
+    <ul>
+        <li><a href="/books/">Список книг</a></li>
+        <li><a href="/readers/">Список читателей</a></li>
+    </ul>
+</body>
+
+</html>

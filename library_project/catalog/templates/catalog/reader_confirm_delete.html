@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>Видалити читача?</h1>
+    <p>Ви впевнені, що хочете видалити читача "<strong>{{ object.first_name }} {{ object.last_name }}</strong>"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" style="color: red;">Так, видалити</button>
+        <a href="/readers/">Ні, повернутися назад</a>
+    </form>
+</body>
+
+</html>

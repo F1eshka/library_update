@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>Наші Книги</h1>
+
+    <p>
+        Показати:
+        <a href="/books/">[ Всі книги ]</a> |
+        <a href="/books/?filter=available">[ Тільки в наявності ]</a>
+    </p>
+
+    <a href="/books/add/">[ + Додати нову книгу ]</a>
+    <hr>
+    <ul>
+        {% for book in books %}
+        <li>
+            <span style="color: {% if book.is_available %}green{% else %}gray{% endif %};">
+                {% if book.is_available %}●{% else %}○{% endif %}
+            </span>
+
+            <a href="/books/{{ book.id }}/"><b>{{ book.title }}</b></a> ({{ book.author }})
+            — <a href="/books/{{ book.id }}/edit/">Редагувати</a>
+            | <a href="/books/{{ book.id }}/delete/" style="color:red;">Видалити</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/">На головну</a>
+</body>
+
+</html>

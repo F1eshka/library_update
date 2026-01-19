@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>Видалити книгу?</h1>
+    <p>Ви впевнені, що хочете видалити книгу "<strong>{{ object.title }}</strong>"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" style="color: red;">Так, видалити</button>
+        <a href="/books/">Ні, повернутися назад</a>
+    </form>
+</body>
+
+</html>
